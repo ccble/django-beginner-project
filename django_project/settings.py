@@ -37,11 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 3rd-party apps
+    "rest_framework",
+    # Local
     "blog.apps.BlogConfig",
     "accounts.apps.AccountsConfig",
+    "apis.apps.ApisConfig",
     "whitenoise.runserver_nostatic", # new
 
 ]
+
+REST_FRAMEWORK = { # new
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
